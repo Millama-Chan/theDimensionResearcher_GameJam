@@ -1,0 +1,183 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/DimensionB.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Audio/Sus8.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Scenes/DimensionA.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/TransitionScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GameScene.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Audio/FairyTail.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Audio/teleport.ogg" type="AudioStream" id=8]
+
+[sub_resource type="Animation" id=4]
+resource_name = "CameraB"
+length = 80.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10, 40, 60, 65, 70, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10, 25, 30, 40, 50, 55, 60, 65, 70, 80 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 300 ), Vector2( 516, 450 ), Vector2( 402, 306 ), Vector2( 232, 470 ), Vector2( 268, 262 ), Vector2( 768, 448 ), Vector2( 674, 322 ), Vector2( 762, 204 ), Vector2( 512, 300 ), Vector2( 512, 300 ), Vector2( 512, 300 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Camera_A"
+length = 60.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10, 20, 30, 40, 45, 50, 60 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.65, 0.65 ), Vector2( 0.65, 0.65 ), Vector2( 0.65, 0.65 ), Vector2( 0.65, 0.65 ), Vector2( 0.65, 0.65 ), Vector2( 0.65, 0.65 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5, 10, 15, 20, 30, 35, 40, 45, 50 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 300 ), Vector2( 512, 300 ), Vector2( 512, 300 ), Vector2( 387, 375 ), Vector2( 550, 262 ), Vector2( 656, 388 ), Vector2( 653, 317 ), Vector2( 571, 216 ), Vector2( 426, 277 ), Vector2( 512, 300 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:limit_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:limit_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Camera2D:limit_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1024 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Camera2D:limit_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 600 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Camera2D:zoom")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ) ]
+}
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="DimensionB" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="DimensionA" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotating = true
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 600
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/CameraB = SubResource( 4 )
+anims/Camera_A = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="MusicA" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0
+
+[node name="MusicB" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+
+[node name="TransitionScreen" parent="." instance=ExtResource( 4 )]
+
+[node name="teleport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )

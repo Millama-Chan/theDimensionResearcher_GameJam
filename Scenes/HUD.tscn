@@ -1,0 +1,2045 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Assets/Fonts/kf_16_o1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Interface/SideMenu.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/kp_18.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/kfn_22_o2.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/Interface/Btn_Middle.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/Btn_Middle1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interface/Btn_Right.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Interface/Btn_Left.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Interface/Btn_Right1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Interface/Btn_Left1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Fonts/kfn_14_o1.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Assets/Items/Slime Gel.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Items/Crystal.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Items/Obsidian.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Interface/PauseMenu.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Interface_A.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Fonts/kb_25_o2.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Audio/Button.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Interface/Shop.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Fonts/kp_25.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Assets/Items/Wool.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Items/Rune Stone.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Fonts/description.tres" type="DynamicFont" id=23]
+[ext_resource path="res://Assets/Interface/Shop/arrowRight1.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Interface/Shop/arrowLeft1.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Interface/Shop/arrowLeft.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Interface/Shop/arrowRight.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Fonts/Kenney Pixel.ttf" type="DynamicFontData" id=28]
+[ext_resource path="res://Assets/Interface/SideMenuB.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Items/Green Potion.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Interface/Btn_LeftB.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Interface/Btn_MiddleB.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Interface/Btn_RightB.png" type="Texture" id=33]
+[ext_resource path="res://Scenes/Interface_B.gd" type="Script" id=34]
+[ext_resource path="res://Scenes/TransitionScreen.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Audio/b2.ogg" type="AudioStream" id=36]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 28 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 9
+outline_color = Color( 0.282353, 0.2, 0.0941176, 1 )
+font_data = ExtResource( 28 )
+
+[node name="HUD" type="CanvasLayer"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 74.0 ]
+}
+
+[node name="Interface_A" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackExtra" type="ColorRect" parent="Interface_A"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -175.0
+margin_right = 160.0
+margin_bottom = 175.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftMenu" type="TextureRect" parent="Interface_A"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -200.0
+margin_right = 125.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 160, 400 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DimA" type="Label" parent="Interface_A/LeftMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -44.5
+margin_top = 2.0
+margin_right = 1.5
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "Dim A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="Interface_A/LeftMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="t1" type="Label" parent="Interface_A/LeftMenu/VB"]
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 107.0
+custom_fonts/font = ExtResource( 1 )
+text = "Research 
+Points A:"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="point_label" type="Label" parent="Interface_A/LeftMenu/VB"]
+margin_top = 112.0
+margin_right = 160.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Control" type="Control" parent="Interface_A/LeftMenu/VB"]
+margin_top = 133.0
+margin_right = 160.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Title1" type="Label" parent="Interface_A/LeftMenu/VB"]
+margin_top = 163.0
+margin_right = 160.0
+margin_bottom = 180.0
+custom_colors/font_color = Color( 0.760784, 0.988235, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "lunar crystals"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HCristal" type="HBoxContainer" parent="Interface_A/LeftMenu/VB"]
+margin_top = 185.0
+margin_right = 160.0
+margin_bottom = 217.0
+alignment = 1
+
+[node name="Crystal" type="TextureRect" parent="Interface_A/LeftMenu/VB/HCristal"]
+margin_left = 58.0
+margin_right = 90.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 13 )
+
+[node name="cristalL" type="Label" parent="Interface_A/LeftMenu/VB/HCristal"]
+margin_left = 94.0
+margin_top = 8.0
+margin_right = 101.0
+margin_bottom = 24.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+valign = 1
+
+[node name="Title2" type="Label" parent="Interface_A/LeftMenu/VB"]
+margin_top = 222.0
+margin_right = 160.0
+margin_bottom = 239.0
+custom_colors/font_color = Color( 0.760784, 0.988235, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Shadowy Onyx"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HSO" type="HBoxContainer" parent="Interface_A/LeftMenu/VB"]
+margin_top = 244.0
+margin_right = 160.0
+margin_bottom = 276.0
+alignment = 1
+
+[node name="Crystal" type="TextureRect" parent="Interface_A/LeftMenu/VB/HSO"]
+margin_left = 58.0
+margin_right = 90.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 14 )
+
+[node name="onixL" type="Label" parent="Interface_A/LeftMenu/VB/HSO"]
+margin_left = 94.0
+margin_top = 16.0
+margin_right = 101.0
+margin_bottom = 32.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+valign = 1
+
+[node name="Title3" type="Label" parent="Interface_A/LeftMenu/VB"]
+margin_top = 281.0
+margin_right = 160.0
+margin_bottom = 298.0
+custom_colors/font_color = Color( 0.760784, 0.988235, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Ether gel"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HGel" type="HBoxContainer" parent="Interface_A/LeftMenu/VB"]
+margin_top = 303.0
+margin_right = 160.0
+margin_bottom = 335.0
+alignment = 1
+
+[node name="Crystal" type="TextureRect" parent="Interface_A/LeftMenu/VB/HGel"]
+margin_left = 58.0
+margin_right = 90.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 12 )
+
+[node name="gelL" type="Label" parent="Interface_A/LeftMenu/VB/HGel"]
+margin_left = 94.0
+margin_top = 16.0
+margin_right = 101.0
+margin_bottom = 32.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+valign = 1
+
+[node name="HB" type="HBoxContainer" parent="Interface_A"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -165.0
+margin_top = -100.0
+margin_right = 165.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Shop" type="TextureButton" parent="Interface_A/HB"]
+margin_top = 25.0
+margin_right = 75.0
+margin_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 10 )
+
+[node name="clickerA" type="TextureButton" parent="Interface_A/HB"]
+margin_left = 90.0
+margin_right = 240.0
+margin_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Interface_A/HB/clickerA"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Research"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Config" type="TextureButton" parent="Interface_A/HB"]
+margin_left = 255.0
+margin_top = 25.0
+margin_right = 330.0
+margin_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Interface_A"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_right = 512.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 17 )
+text = "Press \"Q\" to change dimension!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopMenu" type="ColorRect" parent="Interface_A"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.843137 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureRect" parent="Interface_A/ShopMenu"]
+self_modulate = Color( 0.552941, 0.552941, 0.552941, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -225.0
+margin_right = 350.0
+margin_bottom = 225.0
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="Interface_A/ShopMenu/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Divider1" type="Control" parent="Interface_A/ShopMenu/Back/VB"]
+margin_right = 700.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Menu" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB"]
+margin_top = 30.0
+margin_right = 700.0
+margin_bottom = 53.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ProgressBtn" type="Button" parent="Interface_A/ShopMenu/Back/VB/Menu"]
+margin_left = 47.0
+margin_right = 172.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Progress"
+
+[node name="UpgradeBtn" type="Button" parent="Interface_A/ShopMenu/Back/VB/Menu"]
+margin_left = 192.0
+margin_right = 317.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Upgrades"
+
+[node name="GoalBtn" type="Button" parent="Interface_A/ShopMenu/Back/VB/Menu"]
+margin_left = 337.0
+margin_right = 462.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Goal"
+
+[node name="Control" type="Control" parent="Interface_A/ShopMenu/Back/VB/Menu"]
+margin_left = 482.0
+margin_right = 507.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="CloseP" type="Button" parent="Interface_A/ShopMenu/Back/VB/Menu"]
+margin_left = 527.0
+margin_right = 652.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Close"
+
+[node name="Divider2" type="Control" parent="Interface_A/ShopMenu/Back/VB"]
+margin_top = 73.0
+margin_right = 700.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="progessPanel" type="VBoxContainer" parent="Interface_A/ShopMenu/Back/VB"]
+margin_left = 50.0
+margin_top = 98.0
+margin_right = 650.0
+margin_bottom = 393.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/progessPanel"]
+margin_left = 50.0
+margin_right = 550.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+text = "To unclock resources you'll need to research!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item1" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/progessPanel"]
+margin_top = 73.0
+margin_right = 600.0
+margin_bottom = 105.0
+
+[node name="item11" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item1"]
+margin_left = 36.0
+margin_top = 6.0
+margin_right = 324.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = ": requires x 30 research"
+
+[node name="Item2" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/progessPanel"]
+margin_top = 125.0
+margin_right = 600.0
+margin_bottom = 157.0
+
+[node name="item11" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item2"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item2"]
+margin_left = 36.0
+margin_top = 6.0
+margin_right = 264.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = ": requires 1.000 x "
+
+[node name="itemreuired" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item2"]
+margin_left = 268.0
+margin_right = 300.0
+margin_bottom = 32.0
+texture = ExtResource( 22 )
+
+[node name="Item3" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/progessPanel"]
+margin_top = 177.0
+margin_right = 600.0
+margin_bottom = 209.0
+
+[node name="item11" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item3"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item3"]
+margin_left = 36.0
+margin_top = 6.0
+margin_right = 276.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = ": requires 20.000 x "
+
+[node name="itemreuired" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/progessPanel/Item3"]
+margin_left = 280.0
+margin_right = 312.0
+margin_bottom = 32.0
+texture = ExtResource( 21 )
+
+[node name="Label2" type="Label" parent="Interface_A/ShopMenu/Back/VB/progessPanel"]
+margin_top = 229.0
+margin_right = 600.0
+margin_bottom = 295.0
+custom_colors/font_color = Color( 0.764706, 0.811765, 0.968627, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "Surronded by darkness with bright icy landscapes, 
+mythical flora and a frosty enviroment,
+ Dimension A is full of  secrets to be uncovered."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="upgradesPanel" type="VBoxContainer" parent="Interface_A/ShopMenu/Back/VB"]
+visible = false
+margin_left = 50.0
+margin_top = 98.0
+margin_right = 650.0
+margin_bottom = 399.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Page1" type="VBoxContainer" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel"]
+margin_right = 600.0
+margin_bottom = 301.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_right = 600.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Get more data and resources
+ with these upgrades"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 57.0
+margin_right = 600.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 20 )
+text = "Each upgrade will increase how much research points and resouces you get with each click!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="2extra" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 104.0
+margin_right = 600.0
+margin_bottom = 149.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/2extra"]
+margin_right = 90.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 90, 45 )
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "+5"
+
+[node name="space" type="Control" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/2extra"]
+margin_left = 95.0
+margin_right = 105.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="value" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/2extra"]
+margin_left = 110.0
+margin_top = 14.0
+margin_right = 170.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 100"
+
+[node name="itemR" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/2extra"]
+margin_left = 175.0
+margin_top = 6.0
+margin_right = 207.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 21 )
+
+[node name="25extra" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 153.0
+margin_right = 600.0
+margin_bottom = 198.0
+custom_constants/separation = 5
+
+[node name="Button2" type="Button" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/25extra"]
+margin_right = 90.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 90, 45 )
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "+25"
+
+[node name="space" type="Control" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/25extra"]
+margin_left = 95.0
+margin_right = 105.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="value" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/25extra"]
+margin_left = 110.0
+margin_top = 14.0
+margin_right = 170.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 500"
+
+[node name="itemR" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/25extra"]
+margin_left = 175.0
+margin_top = 6.0
+margin_right = 207.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 22 )
+
+[node name="100extra" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 202.0
+margin_right = 600.0
+margin_bottom = 247.0
+custom_constants/separation = 5
+
+[node name="Button3" type="Button" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/100extra"]
+margin_right = 90.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 90, 45 )
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "+250"
+
+[node name="space" type="Control" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/100extra"]
+margin_left = 95.0
+margin_right = 105.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="value" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/100extra"]
+margin_left = 110.0
+margin_top = 14.0
+margin_right = 190.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 5.000"
+
+[node name="itemR" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/100extra"]
+margin_left = 195.0
+margin_top = 6.0
+margin_right = 227.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 21 )
+
+[node name="next" type="TextureButton" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_left = 275.0
+margin_top = 251.0
+margin_right = 325.0
+margin_bottom = 301.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 27 )
+texture_hover = ExtResource( 24 )
+
+[node name="Page2" type="VBoxContainer" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel"]
+visible = false
+margin_right = 600.0
+margin_bottom = 306.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label3" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_right = 600.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 4 )
+text = "Tired of clicking? let the auto clicker do the research for you"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 63.0
+margin_right = 600.0
+margin_bottom = 83.0
+custom_fonts/font = ExtResource( 20 )
+text = "Get random amounts of resources every 2 seconds!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 93.0
+margin_right = 600.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
+text = "Possible amouts: [ 1, 2, 3, 4, 5, 10 ]"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="autoClick" type="Button" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_left = 175.0
+margin_top = 119.0
+margin_right = 425.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 250, 25 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "Auto Clicker A"
+
+[node name="space" type="Control" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 174.0
+margin_right = 600.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="Label5" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 184.0
+margin_right = 600.0
+margin_bottom = 204.0
+custom_fonts/font = ExtResource( 20 )
+text = "Requirements:"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="requirements" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 214.0
+margin_right = 600.0
+margin_bottom = 246.0
+alignment = 1
+
+[node name="itemR" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 155.0
+margin_right = 187.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 21 )
+
+[node name="value" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 191.0
+margin_top = 7.0
+margin_right = 251.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 200"
+
+[node name="value3" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 255.0
+margin_top = 7.0
+margin_right = 345.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
+text = "   AND   "
+
+[node name="itemR2" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 349.0
+margin_right = 381.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 22 )
+
+[node name="value2" type="Label" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 385.0
+margin_top = 7.0
+margin_right = 445.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 100"
+
+[node name="previous" type="TextureButton" parent="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_left = 275.0
+margin_top = 256.0
+margin_right = 325.0
+margin_bottom = 306.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 26 )
+texture_hover = ExtResource( 25 )
+
+[node name="goalPanel" type="VBoxContainer" parent="Interface_A/ShopMenu/Back/VB"]
+visible = false
+margin_left = 50.0
+margin_top = 98.0
+margin_right = 650.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/goalPanel"]
+margin_right = 600.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 4 )
+text = "Your goal is to retrieve the
+ following resources :"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImgItens" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/goalPanel"]
+margin_top = 73.0
+margin_right = 600.0
+margin_bottom = 105.0
+custom_constants/separation = 5
+alignment = 1
+
+[node name="item11" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 71.0
+margin_right = 103.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 108.0
+margin_top = 6.0
+margin_right = 204.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 35.000"
+
+[node name="Control" type="Control" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 209.0
+margin_right = 234.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item12" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 239.0
+margin_right = 271.0
+margin_bottom = 32.0
+texture = ExtResource( 14 )
+
+[node name="Label2" type="Label" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 276.0
+margin_top = 6.0
+margin_right = 372.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 10.000"
+
+[node name="Control2" type="Control" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 377.0
+margin_right = 402.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item13" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 407.0
+margin_right = 439.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="Label3" type="Label" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 444.0
+margin_top = 6.0
+margin_right = 528.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 5.000"
+
+[node name="ImgItens2" type="HBoxContainer" parent="Interface_A/ShopMenu/Back/VB/goalPanel"]
+margin_top = 125.0
+margin_right = 600.0
+margin_bottom = 157.0
+custom_constants/separation = 5
+alignment = 1
+
+[node name="item11" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 71.0
+margin_right = 103.0
+margin_bottom = 32.0
+texture = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 108.0
+margin_top = 6.0
+margin_right = 204.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 35.000"
+
+[node name="Control" type="Control" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 209.0
+margin_right = 234.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item12" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 239.0
+margin_right = 271.0
+margin_bottom = 32.0
+texture = ExtResource( 22 )
+
+[node name="Label2" type="Label" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 276.0
+margin_top = 6.0
+margin_right = 372.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 10.000"
+
+[node name="Control2" type="Control" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 377.0
+margin_right = 402.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item13" type="TextureRect" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 407.0
+margin_right = 439.0
+margin_bottom = 32.0
+texture = ExtResource( 30 )
+
+[node name="Label3" type="Label" parent="Interface_A/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 444.0
+margin_top = 6.0
+margin_right = 528.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 5.000"
+
+[node name="EndGame" type="Button" parent="Interface_A/ShopMenu/Back/VB/goalPanel"]
+margin_left = 157.0
+margin_top = 177.0
+margin_right = 442.0
+margin_bottom = 227.0
+rect_min_size = Vector2( 250, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "FINISH  RESEARCH"
+
+[node name="PauseMenu" type="TextureRect" parent="Interface_A"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LLYN" type="VBoxContainer" parent="Interface_A/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -86.0
+margin_right = 512.0
+margin_bottom = 86.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit_message" type="Label" parent="Interface_A/PauseMenu/LLYN"]
+margin_right = 1024.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 1024, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "Are you sure you want to quit to the main menu?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit_message2" type="Label" parent="Interface_A/PauseMenu/LLYN"]
+margin_top = 75.0
+margin_right = 1024.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 1024, 0 )
+custom_fonts/font = ExtResource( 20 )
+text = "This game has no save system. Your progress will be reset!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YN" type="HBoxContainer" parent="Interface_A/PauseMenu/LLYN"]
+margin_top = 145.0
+margin_right = 1024.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 1024, 0 )
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yes" type="Button" parent="Interface_A/PauseMenu/LLYN/YN"]
+margin_left = 407.0
+margin_right = 487.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "YES"
+
+[node name="No" type="Button" parent="Interface_A/PauseMenu/LLYN/YN"]
+margin_left = 537.0
+margin_right = 617.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "NO"
+
+[node name="Auto_A" type="Timer" parent="Interface_A"]
+wait_time = 2.0
+
+[node name="TransitionScreen" parent="Interface_A" instance=ExtResource( 35 )]
+
+[node name="BtnA2" type="AudioStreamPlayer" parent="Interface_A"]
+stream = ExtResource( 36 )
+
+[node name="BtnA1" type="AudioStreamPlayer" parent="Interface_A"]
+stream = ExtResource( 18 )
+
+[node name="Interface_B" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackExtra" type="ColorRect" parent="Interface_B"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -175.0
+margin_bottom = 175.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftMenu" type="TextureRect" parent="Interface_B"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 160, 400 )
+texture = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DimB" type="Label" parent="Interface_B/LeftMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -10.0
+margin_right = 50.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "Dim B"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="Interface_B/LeftMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="t1" type="Label" parent="Interface_B/LeftMenu/VB"]
+margin_top = 54.0
+margin_right = 160.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 1 )
+text = "Research 
+Points B:"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="point_label" type="Label" parent="Interface_B/LeftMenu/VB"]
+margin_top = 102.0
+margin_right = 160.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Control" type="Control" parent="Interface_B/LeftMenu/VB"]
+margin_top = 123.0
+margin_right = 160.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="Title1" type="Label" parent="Interface_B/LeftMenu/VB"]
+margin_top = 153.0
+margin_right = 160.0
+margin_bottom = 190.0
+custom_colors/font_color = Color( 0.898039, 0.792157, 0.94902, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "fallen cloud fluff"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HCristal" type="HBoxContainer" parent="Interface_B/LeftMenu/VB"]
+margin_top = 195.0
+margin_right = 160.0
+margin_bottom = 227.0
+alignment = 1
+
+[node name="Crystal" type="TextureRect" parent="Interface_B/LeftMenu/VB/HCristal"]
+margin_left = 58.0
+margin_right = 90.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 21 )
+
+[node name="cloudL" type="Label" parent="Interface_B/LeftMenu/VB/HCristal"]
+margin_left = 94.0
+margin_top = 8.0
+margin_right = 101.0
+margin_bottom = 24.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+valign = 1
+
+[node name="Title2" type="Label" parent="Interface_B/LeftMenu/VB"]
+margin_top = 232.0
+margin_right = 160.0
+margin_bottom = 249.0
+custom_colors/font_color = Color( 0.898039, 0.792157, 0.94902, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "meteor fragment"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HSO" type="HBoxContainer" parent="Interface_B/LeftMenu/VB"]
+margin_top = 254.0
+margin_right = 160.0
+margin_bottom = 286.0
+alignment = 1
+
+[node name="Crystal" type="TextureRect" parent="Interface_B/LeftMenu/VB/HSO"]
+margin_left = 58.0
+margin_right = 90.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 22 )
+
+[node name="meteorL" type="Label" parent="Interface_B/LeftMenu/VB/HSO"]
+margin_left = 94.0
+margin_top = 16.0
+margin_right = 101.0
+margin_bottom = 32.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+valign = 1
+
+[node name="Title3" type="Label" parent="Interface_B/LeftMenu/VB"]
+margin_top = 291.0
+margin_right = 160.0
+margin_bottom = 308.0
+custom_colors/font_color = Color( 0.898039, 0.792157, 0.94902, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = " solar essence"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HGel" type="HBoxContainer" parent="Interface_B/LeftMenu/VB"]
+margin_top = 313.0
+margin_right = 160.0
+margin_bottom = 345.0
+alignment = 1
+
+[node name="Crystal" type="TextureRect" parent="Interface_B/LeftMenu/VB/HGel"]
+margin_left = 58.0
+margin_right = 90.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 30 )
+
+[node name="solarL" type="Label" parent="Interface_B/LeftMenu/VB/HGel"]
+margin_left = 94.0
+margin_top = 16.0
+margin_right = 101.0
+margin_bottom = 32.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+valign = 1
+
+[node name="HB" type="HBoxContainer" parent="Interface_B"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -165.0
+margin_top = -100.0
+margin_right = 165.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Shop" type="TextureButton" parent="Interface_B/HB"]
+margin_top = 25.0
+margin_right = 75.0
+margin_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 31 )
+texture_hover = ExtResource( 10 )
+
+[node name="clickerB" type="TextureButton" parent="Interface_B/HB"]
+margin_left = 90.0
+margin_right = 240.0
+margin_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 32 )
+texture_hover = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Interface_B/HB/clickerB"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+text = "Research"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Btn_Config" type="TextureButton" parent="Interface_B/HB"]
+margin_left = 255.0
+margin_top = 25.0
+margin_right = 330.0
+margin_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 33 )
+texture_hover = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Interface_B"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_right = 512.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 17 )
+text = "Press \"Q\" to change dimension!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopMenu" type="ColorRect" parent="Interface_B"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.843137 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureRect" parent="Interface_B/ShopMenu"]
+self_modulate = Color( 0.552941, 0.552941, 0.552941, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -225.0
+margin_right = 350.0
+margin_bottom = 225.0
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="Interface_B/ShopMenu/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Divider1" type="Control" parent="Interface_B/ShopMenu/Back/VB"]
+margin_right = 700.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Menu" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB"]
+margin_top = 30.0
+margin_right = 700.0
+margin_bottom = 53.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ProgressBtn" type="Button" parent="Interface_B/ShopMenu/Back/VB/Menu"]
+margin_left = 47.0
+margin_right = 172.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Progress"
+
+[node name="UpgradeBtn" type="Button" parent="Interface_B/ShopMenu/Back/VB/Menu"]
+margin_left = 192.0
+margin_right = 317.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Upgrades"
+
+[node name="GoalBtn" type="Button" parent="Interface_B/ShopMenu/Back/VB/Menu"]
+margin_left = 337.0
+margin_right = 462.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Goal"
+
+[node name="Control" type="Control" parent="Interface_B/ShopMenu/Back/VB/Menu"]
+margin_left = 482.0
+margin_right = 507.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="CloseP" type="Button" parent="Interface_B/ShopMenu/Back/VB/Menu"]
+margin_left = 527.0
+margin_right = 652.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 125, 0 )
+custom_fonts/font = ExtResource( 11 )
+text = "Close"
+
+[node name="Divider2" type="Control" parent="Interface_B/ShopMenu/Back/VB"]
+margin_top = 73.0
+margin_right = 700.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="progessPanel" type="VBoxContainer" parent="Interface_B/ShopMenu/Back/VB"]
+margin_left = 50.0
+margin_top = 98.0
+margin_right = 650.0
+margin_bottom = 393.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="Interface_B/ShopMenu/Back/VB/progessPanel"]
+margin_left = 50.0
+margin_right = 550.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+text = "To unclock resources you'll need to research!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item1" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/progessPanel"]
+margin_top = 73.0
+margin_right = 600.0
+margin_bottom = 105.0
+
+[node name="item11" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item1"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item1"]
+margin_left = 36.0
+margin_top = 6.0
+margin_right = 324.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = ": requires x 30 research"
+
+[node name="Item2" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/progessPanel"]
+margin_top = 125.0
+margin_right = 600.0
+margin_bottom = 157.0
+
+[node name="item11" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item2"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 22 )
+
+[node name="Label" type="Label" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item2"]
+margin_left = 36.0
+margin_top = 6.0
+margin_right = 240.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = ": requires 500 x "
+
+[node name="itemreuired" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item2"]
+margin_left = 244.0
+margin_right = 276.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+
+[node name="Item3" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/progessPanel"]
+margin_top = 177.0
+margin_right = 600.0
+margin_bottom = 209.0
+
+[node name="item11" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item3"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 30 )
+
+[node name="Label" type="Label" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item3"]
+margin_left = 36.0
+margin_top = 6.0
+margin_right = 276.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = ": requires 10.000 x "
+
+[node name="itemreuired" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/progessPanel/Item3"]
+margin_left = 280.0
+margin_right = 312.0
+margin_bottom = 32.0
+texture = ExtResource( 14 )
+
+[node name="Label2" type="Label" parent="Interface_B/ShopMenu/Back/VB/progessPanel"]
+margin_top = 229.0
+margin_right = 600.0
+margin_bottom = 295.0
+custom_colors/font_color = Color( 0.764706, 0.811765, 0.968627, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Bright, warm and full of lushfull flora, 
+ Dimension B is full of life and peculiar phenomenals worth studying about."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="upgradesPanel" type="VBoxContainer" parent="Interface_B/ShopMenu/Back/VB"]
+visible = false
+margin_left = 50.0
+margin_top = 98.0
+margin_right = 650.0
+margin_bottom = 399.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Page1" type="VBoxContainer" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel"]
+margin_right = 600.0
+margin_bottom = 301.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_right = 600.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Get more data and resources
+ with these upgrades"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 57.0
+margin_right = 600.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 20 )
+text = "Each upgrade will increase how much research points and resouces you get with each click!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="2extraB" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 104.0
+margin_right = 600.0
+margin_bottom = 149.0
+custom_constants/separation = 5
+
+[node name="ButtonB" type="Button" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/2extraB"]
+margin_right = 90.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 90, 45 )
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "+5"
+
+[node name="space" type="Control" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/2extraB"]
+margin_left = 95.0
+margin_right = 105.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="value" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/2extraB"]
+margin_left = 110.0
+margin_top = 14.0
+margin_right = 170.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 100"
+
+[node name="itemR" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/2extraB"]
+margin_left = 175.0
+margin_top = 6.0
+margin_right = 207.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 13 )
+
+[node name="25extraB" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 153.0
+margin_right = 600.0
+margin_bottom = 198.0
+custom_constants/separation = 5
+
+[node name="Button2B" type="Button" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/25extraB"]
+margin_right = 90.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 90, 45 )
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "+25"
+
+[node name="space" type="Control" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/25extraB"]
+margin_left = 95.0
+margin_right = 105.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="value" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/25extraB"]
+margin_left = 110.0
+margin_top = 14.0
+margin_right = 170.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 500"
+
+[node name="itemR" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/25extraB"]
+margin_left = 175.0
+margin_top = 6.0
+margin_right = 207.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 14 )
+
+[node name="100extraB" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_top = 202.0
+margin_right = 600.0
+margin_bottom = 247.0
+custom_constants/separation = 5
+
+[node name="Button3B" type="Button" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/100extraB"]
+margin_right = 90.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 90, 45 )
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "+250"
+
+[node name="space" type="Control" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/100extraB"]
+margin_left = 95.0
+margin_right = 105.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="value" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/100extraB"]
+margin_left = 110.0
+margin_top = 14.0
+margin_right = 190.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 5.000"
+
+[node name="itemR" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/100extraB"]
+margin_left = 195.0
+margin_top = 6.0
+margin_right = 227.0
+margin_bottom = 38.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 13 )
+
+[node name="next" type="TextureButton" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1"]
+margin_left = 275.0
+margin_top = 251.0
+margin_right = 325.0
+margin_bottom = 301.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 27 )
+texture_hover = ExtResource( 24 )
+
+[node name="Page2" type="VBoxContainer" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel"]
+visible = false
+margin_right = 600.0
+margin_bottom = 306.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Label3" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_right = 600.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 4 )
+text = "Tired of clicking? let the auto clicker do the research for you"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 63.0
+margin_right = 600.0
+margin_bottom = 83.0
+custom_fonts/font = ExtResource( 20 )
+text = "Get random amounts of resources every 2 seconds!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 93.0
+margin_right = 600.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 1 )
+text = "Possible amouts: [ 1, 2, 3, 4, 5, 10 ]"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="autoClickB" type="Button" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_left = 175.0
+margin_top = 119.0
+margin_right = 425.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 250, 25 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "Auto Clicker B"
+
+[node name="space" type="Control" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 174.0
+margin_right = 600.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="Label5" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 184.0
+margin_right = 600.0
+margin_bottom = 204.0
+custom_fonts/font = ExtResource( 20 )
+text = "Requirements:"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="requirements" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_top = 214.0
+margin_right = 600.0
+margin_bottom = 246.0
+alignment = 1
+
+[node name="itemR" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 155.0
+margin_right = 187.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 13 )
+
+[node name="value" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 191.0
+margin_top = 7.0
+margin_right = 251.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 200"
+
+[node name="value3" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 255.0
+margin_top = 7.0
+margin_right = 345.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
+text = "   AND   "
+
+[node name="itemR2" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 349.0
+margin_right = 381.0
+margin_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 14 )
+
+[node name="value2" type="Label" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2/requirements"]
+margin_left = 385.0
+margin_top = 7.0
+margin_right = 445.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 11 )
+text = " X 100"
+
+[node name="previous" type="TextureButton" parent="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2"]
+margin_left = 275.0
+margin_top = 256.0
+margin_right = 325.0
+margin_bottom = 306.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 26 )
+texture_hover = ExtResource( 25 )
+
+[node name="goalPanel" type="VBoxContainer" parent="Interface_B/ShopMenu/Back/VB"]
+visible = false
+margin_left = 50.0
+margin_top = 98.0
+margin_right = 650.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="Label2" type="Label" parent="Interface_B/ShopMenu/Back/VB/goalPanel"]
+margin_right = 600.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 4 )
+text = "Your goal is to retrieve the
+ following resources :"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImgItens" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/goalPanel"]
+margin_top = 73.0
+margin_right = 600.0
+margin_bottom = 105.0
+custom_constants/separation = 5
+alignment = 1
+
+[node name="item11" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 71.0
+margin_right = 103.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 108.0
+margin_top = 6.0
+margin_right = 204.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 35.000"
+
+[node name="Control" type="Control" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 209.0
+margin_right = 234.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item12" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 239.0
+margin_right = 271.0
+margin_bottom = 32.0
+texture = ExtResource( 14 )
+
+[node name="Label2" type="Label" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 276.0
+margin_top = 6.0
+margin_right = 372.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 10.000"
+
+[node name="Control2" type="Control" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 377.0
+margin_right = 402.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item13" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 407.0
+margin_right = 439.0
+margin_bottom = 32.0
+texture = ExtResource( 12 )
+
+[node name="Label3" type="Label" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens"]
+margin_left = 444.0
+margin_top = 6.0
+margin_right = 528.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 5.000"
+
+[node name="ImgItens2" type="HBoxContainer" parent="Interface_B/ShopMenu/Back/VB/goalPanel"]
+margin_top = 125.0
+margin_right = 600.0
+margin_bottom = 157.0
+custom_constants/separation = 5
+alignment = 1
+
+[node name="item11" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 71.0
+margin_right = 103.0
+margin_bottom = 32.0
+texture = ExtResource( 21 )
+
+[node name="Label" type="Label" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 108.0
+margin_top = 6.0
+margin_right = 204.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 35.000"
+
+[node name="Control" type="Control" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 209.0
+margin_right = 234.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item12" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 239.0
+margin_right = 271.0
+margin_bottom = 32.0
+texture = ExtResource( 22 )
+
+[node name="Label2" type="Label" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 276.0
+margin_top = 6.0
+margin_right = 372.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 10.000"
+
+[node name="Control2" type="Control" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 377.0
+margin_right = 402.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="item13" type="TextureRect" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 407.0
+margin_right = 439.0
+margin_bottom = 32.0
+texture = ExtResource( 30 )
+
+[node name="Label3" type="Label" parent="Interface_B/ShopMenu/Back/VB/goalPanel/ImgItens2"]
+margin_left = 444.0
+margin_top = 6.0
+margin_right = 528.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+text = "X 5.000"
+
+[node name="EndGame" type="Button" parent="Interface_B/ShopMenu/Back/VB/goalPanel"]
+margin_left = 157.0
+margin_top = 177.0
+margin_right = 442.0
+margin_bottom = 227.0
+rect_min_size = Vector2( 250, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+disabled = true
+text = "FINISH  RESEARCH"
+
+[node name="PauseMenu" type="TextureRect" parent="Interface_B"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LLYN" type="VBoxContainer" parent="Interface_B/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -86.0
+margin_right = 512.0
+margin_bottom = 86.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit_message" type="Label" parent="Interface_B/PauseMenu/LLYN"]
+margin_right = 1024.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 1024, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "Are you sure you want to quit to the main menu?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit_message2" type="Label" parent="Interface_B/PauseMenu/LLYN"]
+margin_top = 75.0
+margin_right = 1024.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 1024, 0 )
+custom_fonts/font = ExtResource( 20 )
+text = "This game has no save system. Your progress will be reset!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YN" type="HBoxContainer" parent="Interface_B/PauseMenu/LLYN"]
+margin_top = 145.0
+margin_right = 1024.0
+margin_bottom = 176.0
+rect_min_size = Vector2( 1024, 0 )
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yes" type="Button" parent="Interface_B/PauseMenu/LLYN/YN"]
+margin_left = 407.0
+margin_right = 487.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "YES"
+
+[node name="No" type="Button" parent="Interface_B/PauseMenu/LLYN/YN"]
+margin_left = 537.0
+margin_right = 617.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 80, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "NO"
+
+[node name="Auto_B" type="Timer" parent="Interface_B"]
+wait_time = 2.0
+
+[node name="TransitionScreen" parent="Interface_B" instance=ExtResource( 35 )]
+
+[node name="BtnA2" type="AudioStreamPlayer" parent="Interface_B"]
+stream = ExtResource( 36 )
+
+[node name="BtnA1" type="AudioStreamPlayer" parent="Interface_B"]
+stream = ExtResource( 18 )
+
+[connection signal="pressed" from="Interface_A/HB/Btn_Shop" to="Interface_A" method="_on_Btn_Shop_pressed"]
+[connection signal="pressed" from="Interface_A/HB/clickerA" to="Interface_A" method="_on_clickerA_pressed"]
+[connection signal="pressed" from="Interface_A/HB/Btn_Config" to="Interface_A" method="_on_Btn_Config_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/Menu/ProgressBtn" to="Interface_A" method="_on_ProgressBtn_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/Menu/UpgradeBtn" to="Interface_A" method="_on_UpgradeBtn_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/Menu/GoalBtn" to="Interface_A" method="_on_GoalBtn_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/Menu/CloseP" to="Interface_A" method="_on_CloseP_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/2extra/Button" to="Interface_A" method="_on_Button_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/25extra/Button2" to="Interface_A" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/100extra/Button3" to="Interface_A" method="_on_Button3_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page1/next" to="Interface_A" method="_on_next_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2/autoClick" to="Interface_A" method="_on_autoClick_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/upgradesPanel/Page2/previous" to="Interface_A" method="_on_previous_pressed"]
+[connection signal="pressed" from="Interface_A/ShopMenu/Back/VB/goalPanel/EndGame" to="Interface_A" method="_on_EndGame_pressed"]
+[connection signal="pressed" from="Interface_A/PauseMenu/LLYN/YN/Yes" to="Interface_A" method="_on_Yes_pressed"]
+[connection signal="pressed" from="Interface_A/PauseMenu/LLYN/YN/No" to="Interface_A" method="_on_No_pressed"]
+[connection signal="timeout" from="Interface_A/Auto_A" to="Interface_A" method="_on_Auto_A_timeout"]
+[connection signal="pressed" from="Interface_B/HB/Btn_Shop" to="Interface_B" method="_on_Btn_Shop_pressed"]
+[connection signal="pressed" from="Interface_B/HB/clickerB" to="Interface_B" method="_on_clickerB_pressed"]
+[connection signal="pressed" from="Interface_B/HB/Btn_Config" to="Interface_B" method="_on_Btn_Config_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/Menu/ProgressBtn" to="Interface_B" method="_on_ProgressBtn_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/Menu/UpgradeBtn" to="Interface_B" method="_on_UpgradeBtn_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/Menu/GoalBtn" to="Interface_B" method="_on_GoalBtn_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/Menu/CloseP" to="Interface_B" method="_on_CloseP_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/2extraB/ButtonB" to="Interface_B" method="_on_ButtonB_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/25extraB/Button2B" to="Interface_B" method="_on_Button2B_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/100extraB/Button3B" to="Interface_B" method="_on_Button3B_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page1/next" to="Interface_B" method="_on_next_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2/autoClickB" to="Interface_B" method="_on_autoClickB_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/upgradesPanel/Page2/previous" to="Interface_B" method="_on_previous_pressed"]
+[connection signal="pressed" from="Interface_B/ShopMenu/Back/VB/goalPanel/EndGame" to="Interface_A" method="_on_EndGame_pressed"]
+[connection signal="pressed" from="Interface_B/PauseMenu/LLYN/YN/Yes" to="Interface_B" method="_on_Yes_pressed"]
+[connection signal="pressed" from="Interface_B/PauseMenu/LLYN/YN/No" to="Interface_B" method="_on_No_pressed"]
+[connection signal="timeout" from="Interface_B/Auto_B" to="Interface_B" method="_on_Auto_B_timeout"]

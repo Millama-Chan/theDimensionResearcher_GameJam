@@ -1,0 +1,317 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Fonts/kf_16_o1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Fonts/kb_25_o2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/kfn_22_o2.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Interface/Btn_Middle.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Interface/Btn_Right.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Interface/Btn_Middle1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Interface/Btn_Right1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/MainMenu.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Credits.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/TransitionScreen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Audio/Button.ogg" type="AudioStream" id=11]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Back" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="Back/MarginContainer"]
+margin_right = 964.0
+margin_bottom = 540.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HB" type="HBoxContainer" parent="Back/MarginContainer/VB"]
+margin_right = 964.0
+margin_bottom = 75.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="story" type="TextureButton" parent="Back/MarginContainer/VB/HB"]
+margin_left = 94.0
+margin_right = 244.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="Back/MarginContainer/VB/HB/story"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Story"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Art" type="TextureButton" parent="Back/MarginContainer/VB/HB"]
+margin_left = 294.0
+margin_right = 444.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="Back/MarginContainer/VB/HB/Art"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Art"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="TextureButton" parent="Back/MarginContainer/VB/HB"]
+margin_left = 494.0
+margin_right = 644.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 150, 50 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="Back/MarginContainer/VB/HB/Audio"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Audio"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Back/MarginContainer/VB/HB"]
+margin_left = 694.0
+margin_right = 744.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Home" type="TextureButton" parent="Back/MarginContainer/VB/HB"]
+margin_left = 794.0
+margin_right = 869.0
+margin_bottom = 75.0
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 7 )
+
+[node name="Art" type="VBoxContainer" parent="Back/MarginContainer/VB"]
+visible = false
+margin_top = 79.0
+margin_right = 964.0
+margin_bottom = 456.0
+custom_constants/separation = 25
+
+[node name="Control2" type="Control" parent="Back/MarginContainer/VB/Art"]
+margin_right = 964.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Label" type="Label" parent="Back/MarginContainer/VB/Art"]
+margin_top = 35.0
+margin_right = 964.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 2 )
+text = "Art"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="Back/MarginContainer/VB/Art"]
+margin_top = 99.0
+margin_right = 964.0
+margin_bottom = 292.0
+custom_fonts/font = ExtResource( 3 )
+text = "- Pixel Art Icon Pack > by Cainos on Itchio
+
+
+- Kenney Fonts
+- UI Pack (Space Expansion)
+- Game Icons
+> All by Kenney on kenney.nl"
+valign = 1
+
+[node name="Control" type="Control" parent="Back/MarginContainer/VB/Art"]
+margin_top = 317.0
+margin_right = 964.0
+margin_bottom = 327.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Label3" type="Label" parent="Back/MarginContainer/VB/Art"]
+margin_top = 352.0
+margin_right = 964.0
+margin_bottom = 377.0
+custom_fonts/font = ExtResource( 3 )
+text = "Other assets created and edited by SoumiAriel"
+align = 2
+valign = 1
+
+[node name="Audio" type="VBoxContainer" parent="Back/MarginContainer/VB"]
+visible = false
+margin_top = 79.0
+margin_right = 964.0
+margin_bottom = 557.0
+custom_constants/separation = 10
+
+[node name="Control2" type="Control" parent="Back/MarginContainer/VB/Audio"]
+margin_right = 964.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Label" type="Label" parent="Back/MarginContainer/VB/Audio"]
+margin_top = 20.0
+margin_right = 964.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 2 )
+text = "Audios"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="Back/MarginContainer/VB/Audio"]
+margin_top = 69.0
+margin_right = 964.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Label4" type="Label" parent="Back/MarginContainer/VB/Audio"]
+margin_top = 89.0
+margin_right = 964.0
+margin_bottom = 394.0
+custom_fonts/font = ExtResource( 3 )
+text = "Instrument Loops : by  f-r-a-g-i-l-e 
+
+SUGGESTION 8.mp3 : by  nomiqbomi
+
+Puzzle Game Victory Melody : by Eponn
+
+Button on Parade : by adh.dreaming
+
+UI Cute Select Major 6th : by plasterbrain
+
+teleport.mp3 : by outroelison"
+valign = 1
+
+[node name="Label2" type="Label" parent="Back/MarginContainer/VB/Audio"]
+margin_top = 404.0
+margin_right = 964.0
+margin_bottom = 429.0
+custom_fonts/font = ExtResource( 3 )
+align = 2
+valign = 1
+
+[node name="Label5" type="Label" parent="Back/MarginContainer/VB/Audio"]
+margin_top = 439.0
+margin_right = 964.0
+margin_bottom = 478.0
+custom_fonts/font = ExtResource( 2 )
+text = "All can be found at   :    Freesound.org"
+align = 1
+valign = 1
+
+[node name="Story" type="VBoxContainer" parent="Back/MarginContainer/VB"]
+margin_top = 79.0
+margin_right = 964.0
+margin_bottom = 462.0
+custom_constants/separation = 15
+
+[node name="Control" type="Control" parent="Back/MarginContainer/VB/Story"]
+margin_right = 964.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Label6" type="Label" parent="Back/MarginContainer/VB/Story"]
+margin_top = 25.0
+margin_right = 964.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+text = "game theme:"
+valign = 1
+
+[node name="Label" type="Label" parent="Back/MarginContainer/VB/Story"]
+margin_top = 60.0
+margin_right = 964.0
+margin_bottom = 99.0
+custom_fonts/font = ExtResource( 2 )
+text = "life in 2 dimensions"
+valign = 1
+
+[node name="Label4" type="Label" parent="Back/MarginContainer/VB/Story"]
+margin_top = 114.0
+margin_right = 964.0
+margin_bottom = 139.0
+custom_fonts/font = ExtResource( 3 )
+text = "GameDev.Tv 2023 GameJam"
+valign = 1
+
+[node name="Label5" type="Label" parent="Back/MarginContainer/VB/Story"]
+margin_top = 154.0
+margin_right = 964.0
+margin_bottom = 193.0
+custom_fonts/font = ExtResource( 2 )
+text = "story/code"
+align = 2
+valign = 1
+
+[node name="Label2" type="Label" parent="Back/MarginContainer/VB/Story"]
+margin_top = 208.0
+margin_right = 964.0
+margin_bottom = 233.0
+custom_fonts/font = ExtResource( 3 )
+text = "SoumiAriel"
+align = 2
+valign = 1
+
+[node name="Label7" type="Label" parent="Back/MarginContainer/VB/Story"]
+margin_top = 248.0
+margin_right = 964.0
+margin_bottom = 287.0
+custom_fonts/font = ExtResource( 2 )
+text = "Special thanks "
+valign = 1
+
+[node name="Label3" type="Label" parent="Back/MarginContainer/VB/Story"]
+margin_top = 302.0
+margin_right = 964.0
+margin_bottom = 383.0
+custom_fonts/font = ExtResource( 3 )
+text = "To my parents for always encouraging me to follow my dreams 
+and supporting me on my game development journey
+"
+valign = 1
+
+[node name="TransitionScreen" parent="." instance=ExtResource( 10 )]
+
+[node name="Btn1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[connection signal="pressed" from="Back/MarginContainer/VB/HB/story" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="Back/MarginContainer/VB/HB/Art" to="." method="_on_Art_pressed"]
+[connection signal="pressed" from="Back/MarginContainer/VB/HB/Audio" to="." method="_on_Audio_pressed"]
+[connection signal="pressed" from="Back/MarginContainer/VB/HB/Home" to="." method="_on_Home_pressed"]

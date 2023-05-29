@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Shadow.png" type="Texture" id=1]
+[ext_resource path="res://Assets/DimensionA.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=1]
+min_value = 1.0
+max_value = 2.5
+_data = [ Vector2( 0.00360577, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 0.570913, 1.80521 ), -3.64593, -3.64593, 0, 0, Vector2( 0.989183, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="DimensionA" type="Node2D"]
+
+[node name="DimensionA" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DimensionA2" type="TextureRect" parent="DimensionA"]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -267, -54 )
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Node2D"]
+position = Vector2( 729, -84 )
+amount = 92
+lifetime = 10.0
+fract_delta = false
+emission_shape = 2
+emission_rect_extents = Vector2( 1, 1 )
+spread = 180.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 10.0
+linear_accel = 20.0
+scale_amount = 2.0
+scale_amount_curve = SubResource( 1 )

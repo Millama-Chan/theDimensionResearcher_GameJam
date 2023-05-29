@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FairyTail.ogg-4c6b28188ce4fe91b71125ec0315da2f.oggstr"
+
+[deps]
+
+source_file="res://Audio/FairyTail.ogg"
+dest_files=[ "res://.import/FairyTail.ogg-4c6b28188ce4fe91b71125ec0315da2f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/DimensionB.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Light.png" type="Texture" id=2]
+
+[node name="DimensionB" type="Node2D"]
+
+[node name="DimensionB" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light" type="TextureRect" parent="DimensionB"]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
